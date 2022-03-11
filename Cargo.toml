@@ -1,0 +1,16 @@
+[package]
+name = "realvnc-sys"
+version = "0.1.0"
+edition = "2021"
+build = "build.rs"
+links = "libvncsdk"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+libc = "0.2.119"
+
+[build-dependencies]
+cc = { version = "1.0.73", features = ["parallel"] }
+pkg-config = "0.3.24"
+bindgen = "0.53.1"
