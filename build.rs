@@ -27,7 +27,7 @@ fn main() {
         .create(true)
         .open(out_path)
         .expect("Unable to open file");
-
+    println!("{:#?}", generated);
     out_file.write_all(generated.as_bytes())
         .expect("Unable to write bindings file");
 }
