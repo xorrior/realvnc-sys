@@ -6,11 +6,10 @@ use std::io::Write;
 use std::path::{Path, PathBuf};
 
 fn main() {
-    let dir = env::var("CARGO_MANIFEST_DIR").unwrap();
-    println!("cargo:rustc-link-search=all={}", Path::new(&dir).join("lib").display());
-    println!("cargo:rustc-link-lib=libvncsdk");
-    println!("cargo:rerun-if-changed=wrapper.h");
 
+    println!("cargo:rerun-if-changed=wrapper.h");
+    println!("cargo:rustc-link-search={}", "/usr/local/lib");
+    println!("cargo:rustc-link-lib=vnc");
     let bindings = bindgen::Builder::default()
         .header("wrapper.h")
         .parse_callbacks(Box::new(bindgen::CargoCallbacks))

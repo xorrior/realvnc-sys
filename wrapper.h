@@ -4,5 +4,5 @@
 
 #ifndef REALVNC_SYS_WRAPPER_H
 #define REALVNC_SYS_WRAPPER_H
-#include "vendor/vnc/Vnc.h"
+#include "vnc/Vnc.h"
 #endif //REALVNC_SYS_WRAPPER_H
